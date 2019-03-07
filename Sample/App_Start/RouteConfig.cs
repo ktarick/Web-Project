@@ -13,6 +13,13 @@ namespace Sample
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+            routes.MapRoute(
+                name: "DirectCreate",
+                url: "New Product",
+                defaults: new { controller = "Product", action = "Create", id = UrlParameter.Optional }
+            );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
